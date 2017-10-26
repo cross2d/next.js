@@ -180,17 +180,15 @@ export class NextScript extends Component {
     __NEXT_DATA__.chunks = chunks
 
     return <div>
-      {staticMarkup ? null : <script nonce={this.props.nonce} dangerouslySetInnerHTML={{
+      {staticMarkup ? null : <script async nonce={this.props.nonce} dangerouslySetInnerHTML={{
         __html: `
           __NEXT_DATA__ = ${htmlescape(__NEXT_DATA__)}
           module={}
           __NEXT_LOADED_PAGES__ = []
           __NEXT_LOADED_CHUNKS__ = []
-
           __NEXT_REGISTER_PAGE = function (route, fn) {
             __NEXT_LOADED_PAGES__.push({ route: route, fn: fn })
           }
-
           __NEXT_REGISTER_CHUNK = function (chunkName, fn) {
             __NEXT_LOADED_CHUNKS__.push({ chunkName: chunkName, fn: fn })
           }
