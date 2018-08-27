@@ -5,5 +5,10 @@
     "start": "npm run build && next start",
     "bench:stateless": "ab -c1 -n3000 http://0.0.0.0:3000/stateless",
     "bench:stateless-big": "ab -c1 -n500 http://0.0.0.0:3000/stateless-big"
+  },
+  "dependencies": {
+    "next": "^4.1.4",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0"
   }
 }
